@@ -1,27 +1,33 @@
 
-// generate random letter from keyboard
-
-	// var randLetter = chars.substr( Math.floor(Math.random() * 26), 1);
-
-	// function random_character() {
-    // 		var chars = "abcdefghijklmnopqurstuvwxyz";
-
-
-// listen for onkeyup event
-	// document.getElementById("fname").onkeyup = function() {myFunction()};
-
-	// 	function myFunction() {
-	//     	var x = document.getElementById("fname");
-	// }
-
-	// document.onkeyup = function(event) {
-	//		
-	//	}
+var letters = ['a','b','c','d','e','f','g','h','i','j','k','l',
+    'm','n','o','p','q','r','s','t','u','v','w','x','y','z'];
+var win = 0;
+var lose = 0;
+var left = 12;
 
 
-// store user letter
-// compare user input with generated key
-// if correct add 1 to wins
-// else add 1 to losses
-// subract 1 from guesses left
-// add one to guesses so far
+
+document.onkeyup = function(event) {
+	var randLetter = letters[Math.floor(Math.random() * letters.length)];
+		console.log(randLetter)
+		
+    var userGuess = event.key;
+
+    if(userGuess === randLetter) {
+        win++;
+    }else {
+        left--;
+    }
+
+    if(left === 0){
+        lose++
+    }
+
+    console.log(win)
+    console.log(lose)
+    console.log(left)
+
+    document.getElementById("wins").innerHtml = win;
+    document.getElementById("losses").innerHtml = lose;
+    document.getElementById("guessesLeft").innerHtml = left;
+}
