@@ -1,0 +1,29 @@
+.main {
+	width: 70%;
+    display: block;
+    margin: 0 auto;
+}
+
+.well {
+	text-align: center;
+}
+
+.panel {
+	width: 70%;
+	display: block;
+    margin: 0 auto;
+}
+
+.main {
+	margin-bottom: 20px;
+}
+
+.panel-body {
+	text-align: center;
+}
+
+.span {
+	padding-left: 15px;
+	margin-left: 15px;
+	line-height: 18px;
+}
